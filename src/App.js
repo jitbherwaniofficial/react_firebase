@@ -1,22 +1,17 @@
-import { getDatabase, ref, set } from 'firebase/database';
-import {app} from "./firebase";
-import './App.css';
 
-const db = getDatabase(app)
+import Signup from "./pages/signup";
+import './App.css';
+import Signin from "./pages/Signin";
+
+// const auth = getAuth(app);
 
 function App() {
-  const putData = () => {
-    set(ref(db, "user/jit"), {
-      id:1,
-      name:"Jit Bherwani",
-      age: 30
-    })
-  }
-
+  
   return (
     <div className="App">
       <h1>Firebase React App</h1>
-      <button onClick={putData}>Put Data</button>
+      <Signup />
+      <Signin />
     </div>
   );
 }
